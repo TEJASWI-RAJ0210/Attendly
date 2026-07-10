@@ -1,0 +1,292 @@
+{
+ "groups": {
+  "CS-S5": {
+   "category": "core",
+   "sections": [
+    "CS1",
+    "CS2",
+    "CS3",
+    "CS4",
+    "CS5",
+    "CS6",
+    "CS7",
+    "CS8",
+    "CS9",
+    "CS10",
+    "CS11",
+    "CS12",
+    "CS13",
+    "CS14",
+    "CS15",
+    "CS16",
+    "CS17",
+    "CS18",
+    "CS19",
+    "CS20",
+    "CS21",
+    "CS22",
+    "CS23",
+    "CS24",
+    "CS25",
+    "CS26",
+    "CS27",
+    "CS28",
+    "CS29",
+    "CS30",
+    "CS31",
+    "CS32",
+    "CS33",
+    "CS34",
+    "CS35",
+    "CS36",
+    "CS37",
+    "CS38",
+    "CS39",
+    "CS40",
+    "CS41",
+    "CS42",
+    "CS43",
+    "CS44",
+    "CS45",
+    "CS46",
+    "CS47",
+    "CS48",
+    "CS49",
+    "CS50",
+    "CS51",
+    "CS52",
+    "CS53",
+    "CS54",
+    "CS55",
+    "CS56",
+    "CS57",
+    "CS58",
+    "CS59",
+    "CS60",
+    "CS61"
+   ]
+  },
+  "CSCE-S5": {
+   "category": "core",
+   "sections": [
+    "CSCE1"
+   ]
+  },
+  "CSSE-S5": {
+   "category": "core",
+   "sections": [
+    "CSSE1"
+   ]
+  },
+  "IT-S5": {
+   "category": "core",
+   "sections": [
+    "IT1",
+    "IT2"
+   ]
+  },
+  "AI-S5-PE1": {
+   "category": "pe1",
+   "sections": [
+    "AI1"
+   ]
+  },
+  "DOS-S5-PE1": {
+   "category": "pe1",
+   "sections": [
+    "DOS1",
+    "DOS2",
+    "DOS3",
+    "DOS4",
+    "DOS5",
+    "DOS6",
+    "DOS7",
+    "DOS8",
+    "DOS9",
+    "DOS10",
+    "DOS11",
+    "DOS12",
+    "DOS13",
+    "DOS14",
+    "DOS15",
+    "DOS16",
+    "DOS17",
+    "DOS18",
+    "DOS19",
+    "DOS20",
+    "DOS21",
+    "DOS22"
+   ]
+  },
+  "HPC-S5-PE1": {
+   "category": "pe1",
+   "sections": [
+    "HPC1",
+    "HPC2",
+    "HPC3",
+    "HPC4",
+    "HPC5",
+    "HPC6",
+    "HPC7",
+    "HPC8",
+    "HPC9",
+    "HPC10",
+    "HPC11",
+    "HPC12",
+    "HPC13",
+    "HPC14",
+    "HPC15",
+    "HPC16",
+    "HPC17",
+    "HPC18",
+    "HPC19",
+    "HPC20",
+    "HPC21",
+    "HPC22",
+    "HPC23"
+   ]
+  },
+  "IPA-S5-PE1": {
+   "category": "pe1",
+   "sections": [
+    "IPA1",
+    "IPA2",
+    "IPA3",
+    "IPA4",
+    "IPA5",
+    "IPA6",
+    "IPA7",
+    "IPA8",
+    "IPA9",
+    "IPA10",
+    "IPA11",
+    "IPA12",
+    "IPA13",
+    "IPA14",
+    "IPA15",
+    "IPA16",
+    "IPA17"
+   ]
+  },
+  "BD-S5-PE2": {
+   "category": "pe2",
+   "sections": [
+    "BD1"
+   ]
+  },
+  "BDS-S5-PE2": {
+   "category": "pe2",
+   "sections": [
+    "BDS1",
+    "BDS2"
+   ]
+  },
+  "CD-S5-PE2": {
+   "category": "pe2",
+   "sections": [
+    "CD1",
+    "CD2",
+    "CD3",
+    "CD4",
+    "CD5",
+    "CD6",
+    "CD7",
+    "CD8",
+    "CD9",
+    "CD10",
+    "CD11",
+    "CD12",
+    "CD13",
+    "CD14"
+   ]
+  },
+  "CI-S5-PE2": {
+   "category": "pe2",
+   "sections": [
+    "CI1",
+    "CI2",
+    "CI3",
+    "CI4",
+    "CI5",
+    "CI6",
+    "CI7",
+    "CI8",
+    "CI9",
+    "CI10"
+   ]
+  },
+  "DMDW-S5-PE2": {
+   "category": "pe2",
+   "sections": [
+    "DMDW1",
+    "DMDW2",
+    "DMDW3",
+    "DMDW4",
+    "DMDW5",
+    "DMDW6",
+    "DMDW7",
+    "DMDW8",
+    "DMDW9",
+    "DMDW10",
+    "DMDW11",
+    "DMDW12",
+    "DMDW13",
+    "DMDW14",
+    "DMDW15",
+    "DMDW16",
+    "DMDW17",
+    "DMDW18",
+    "DMDW19",
+    "DMDW20"
+   ]
+  },
+  "PSIOT-S5-PE2": {
+   "category": "pe2",
+   "sections": [
+    "PSIOT1"
+   ]
+  },
+  "SVP-S5-PE2": {
+   "category": "pe2",
+   "sections": [
+    "SVP1",
+    "SVP2",
+    "SVP3",
+    "SVP4",
+    "SVP5",
+    "SVP6",
+    "SVP7",
+    "SVP8",
+    "SVP9",
+    "SVP10",
+    "SVP11",
+    "SVP12",
+    "SVP13",
+    "SVP14"
+   ]
+  }
+ },
+ "categories": {
+  "core": [
+   "CS-S5",
+   "CSCE-S5",
+   "CSSE-S5",
+   "IT-S5"
+  ],
+  "pe1": [
+   "AI-S5-PE1",
+   "DOS-S5-PE1",
+   "HPC-S5-PE1",
+   "IPA-S5-PE1"
+  ],
+  "pe2": [
+   "BD-S5-PE2",
+   "BDS-S5-PE2",
+   "CD-S5-PE2",
+   "CI-S5-PE2",
+   "DMDW-S5-PE2",
+   "PSIOT-S5-PE2",
+   "SVP-S5-PE2"
+  ]
+ }
+}
