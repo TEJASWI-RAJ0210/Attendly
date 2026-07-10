@@ -1,0 +1,59 @@
+export type DayName = "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday";
+
+export type RawSlot = {
+  start: string; // "HH:MM"
+  end: string;
+  subject: string;
+  room: string;
+};
+
+export type RawSection = {
+  group: string;
+  days: Record<string, RawSlot[]>;
+};
+
+export type SectionsData = Record<string, RawSection>;
+
+export type GroupsManifest = {
+  groups: Record<string, { category: "core" | "pe1" | "pe2"; sections: string[] }>;
+  categories: { core: string[]; pe1: string[]; pe2: string[] };
+};
+
+export type SectionSelection = {
+  core?: string; // section code e.g. "CS15"
+  pe1?: string; // section code e.g. "HPC11"
+  pe2?: string; // section code e.g. "CD8"
+};
+
+// A concrete scheduled class occurrence, combined from up to 3 sections
+export type ScheduledClass = {
+  id: string; // stable id: sectionCode|day|start
+  sectionCode: string;
+  subject: string;
+  room: string;
+  start: string;
+  end: string;
+  day: DayName;
+};
+
+export type AttendanceStatus = "present" | "absent" | "cancelled";
+
+// key: `${subject}|${dateISO}|${start}`
+export type AttendanceRecords = Record<string, AttendanceStatus>;
+
+export type PlannerItem = {
+  id: string;
+  subject: string;
+  title: string;
+  type: "assignment" | "test";
+  dueDate: string; // ISO date YYYY-MM-DD
+  done: boolean;
+};
+
+export type AppState = {
+  selection: SectionSelection;
+  records: AttendanceRecords;
+  planner: PlannerItem[];
+  threshold: number; // global minimum attendance %
+  subjectThresholds: Record<string, number>; // per-subject override
+};
