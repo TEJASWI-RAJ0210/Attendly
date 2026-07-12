@@ -50,10 +50,22 @@ export type PlannerItem = {
   done: boolean;
 };
 
+export type ClassOverride = {
+  room?: string;
+  start?: string;
+  end?: string;
+  day?: DayName; // move this class to a different day of the week
+  removed?: boolean;
+};
+
+// key: same as ScheduledClass.id -> `${sectionCode}|${day}|${originalStart}`
+export type ClassOverrides = Record<string, ClassOverride>;
+
 export type AppState = {
   selection: SectionSelection;
   records: AttendanceRecords;
   planner: PlannerItem[];
   threshold: number; // global minimum attendance %
   subjectThresholds: Record<string, number>; // per-subject override
+  overrides: ClassOverrides; // room/timing corrections or removals
 };
