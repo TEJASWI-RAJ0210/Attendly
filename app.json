@@ -1,18 +1,13 @@
 {
   "expo": {
     "name": "Attendly",
-    "slug": "tejaswi-raj",
+    "slug": "attendly",
     "scheme": "attend",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
     "backgroundColor": "#14161A",
     "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "backgroundColor": "#14161A",
-      "resizeMode": "contain"
-    },
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -34,14 +29,32 @@
     },
     "plugins": [
       "expo-router",
-      "expo-font"
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 260,
+          "resizeMode": "contain",
+          "backgroundColor": "#14161A"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableProguardInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true,
+            "enableMinifyInReleaseBuilds": true
+          }
+        }
+      ],
+      "./plugins/withAbiSplit.js"
     ],
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "eae63f7f-cf4b-423d-b572-15e8867e762e"
+        "projectId": "ea78548f-68ec-44f8-bc8f-035c6e429dad"
       }
-    },
-    "owner": "tejaswi10s-team"
+    }
   }
 }
