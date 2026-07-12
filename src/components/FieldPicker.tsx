@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Modal, FlatList, StyleSheet, Pressable } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { colors, radius, spacing } from "../theme";
 
 export function FieldPicker({
@@ -18,6 +19,7 @@ export function FieldPicker({
   disabled?: boolean;
 }) {
   const [open, setOpen] = useState(false);
+  const insets = useSafeAreaInsets();
   return (
     <View style={{ flex: 1 }}>
       <Text style={styles.label}>{label}</Text>
@@ -34,7 +36,7 @@ export function FieldPicker({
 
       <Modal visible={open} transparent animationType="fade" onRequestClose={() => setOpen(false)}>
         <Pressable style={styles.overlay} onPress={() => setOpen(false)}>
-          <Pressable style={styles.sheet} onPress={(e) => e.stopPropagation()}>
+          <Pressable style={[styles.sheet, { paddingBottom: spacing(5) + insets.bottom }]} onPress={(e) => e.stopPropagation()}>
             <Text style={styles.sheetTitle}>{label}</Text>
             <FlatList
               data={options}

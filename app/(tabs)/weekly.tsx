@@ -13,7 +13,7 @@ export default function WeeklyScreen() {
   const { state, loaded } = useApp();
   const router = useRouter();
   const hasSelection = !!state.selection.core || !!state.selection.pe1 || !!state.selection.pe2;
-  const week = useMemo(() => combinedWeekSchedule(state.selection), [state.selection]);
+  const week = useMemo(() => combinedWeekSchedule(state.selection, state.overrides), [state.selection, state.overrides]);
 
   if (!loaded) return null;
 
