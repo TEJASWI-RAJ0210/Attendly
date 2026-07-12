@@ -31,7 +31,7 @@ export default function SectionsScreen() {
   }
 
   return (
-    <SafeAreaView edges={["top"]} style={styles.wrap}>
+    <SafeAreaView edges={["top", "bottom"]} style={styles.wrap}>
       <ScrollView contentContainerStyle={{ padding: spacing(5) }}>
       <Text style={styles.header}>Your Sections</Text>
       <Text style={styles.sub}>Pick your core branch section, plus your two elective sections.</Text>

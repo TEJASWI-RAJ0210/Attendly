@@ -17,6 +17,7 @@ export default function RootLayout() {
             <Stack.Screen name="sections" options={{ presentation: "modal" }} />
             <Stack.Screen name="settings" options={{ presentation: "modal" }} />
             <Stack.Screen name="add-planner-item" options={{ presentation: "modal" }} />
+          <Stack.Screen name="edit-timetable" options={{ presentation: "modal" }} />
           </Stack>
         </AppProvider>
       </SafeAreaProvider>

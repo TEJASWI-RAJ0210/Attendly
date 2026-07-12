@@ -38,7 +38,7 @@ export default function AddPlannerItem() {
   }
 
   return (
-    <SafeAreaView edges={["top"]} style={styles.wrap}>
+    <SafeAreaView edges={["top", "bottom"]} style={styles.wrap}>
       <ScrollView contentContainerStyle={{ padding: spacing(5) }}>
         <Text style={styles.header}>New assignment / test</Text>
 
