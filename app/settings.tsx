@@ -49,7 +49,7 @@ export default function SettingsScreen() {
   }
 
   return (
-    <SafeAreaView edges={["top"]} style={styles.wrap}>
+    <SafeAreaView edges={["top", "bottom"]} style={styles.wrap}>
       <ScrollView contentContainerStyle={{ padding: spacing(5) }}>
       <Text style={styles.header}>Settings</Text>
 
@@ -66,6 +66,12 @@ export default function SettingsScreen() {
           <Text style={styles.saveSmallBtnText}>Save</Text>
         </TouchableOpacity>
       </View>
+
+      <View style={styles.divider} />
+
+      <TouchableOpacity style={styles.actionBtn} onPress={() => router.push("/edit-timetable")}>
+        <Text style={styles.actionBtnText}>Edit Timetable (room / timing / remove)</Text>
+      </TouchableOpacity>
 
       <View style={styles.divider} />
 
