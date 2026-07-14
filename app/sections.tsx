@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from "react-nati
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 import { useApp } from "../src/context/AppContext";
-import { GROUPS, sectionsInGroup, groupOfSection } from "../src/data/timetable";
+import { GROUPS, sectionsInGroup, groupOfSection, codeOfSection, sectionKey } from "../src/data/timetable";
 import { FieldPicker } from "../src/components/FieldPicker";
 import { colors, radius, spacing } from "../src/theme";
 
@@ -21,12 +21,21 @@ export default function SectionsScreen() {
     state.selection.pe2 ? groupOfSection(state.selection.pe2) : undefined
   );
 
-  const [core, setCore] = useState(state.selection.core);
-  const [pe1, setPe1] = useState(state.selection.pe1);
-  const [pe2, setPe2] = useState(state.selection.pe2);
+  // These hold bare display codes (e.g. "CS15"), matching the options FieldPicker shows.
+  // They get combined with the chosen group into a composite "group|code" key on save.
+  const [core, setCore] = useState<string | undefined>(state.selection.core ? codeOfSection(state.selection.core) : undefined);
+  const [pe1, setPe1] = useState<string | undefined>(state.selection.pe1 ? codeOfSection(state.selection.pe1) : undefined);
+  const [pe2, setPe2] = useState<string | undefined>(state.selection.pe2 ? codeOfSection(state.selection.pe2) : undefined);
 
   function save() {
-    dispatch({ type: "SET_SELECTION", selection: { core, pe1, pe2 } });
+    dispatch({
+      type: "SET_SELECTION",
+      selection: {
+        core: coreGroup && core ? sectionKey(coreGroup, core) : undefined,
+        pe1: pe1Group && pe1 ? sectionKey(pe1Group, pe1) : undefined,
+        pe2: pe2Group && pe2 ? sectionKey(pe2Group, pe2) : undefined,
+      },
+    });
     router.back();
   }
 

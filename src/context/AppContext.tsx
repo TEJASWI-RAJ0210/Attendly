@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useReducer, useRef } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { AppState, AttendanceStatus, PlannerItem, SectionSelection } from "../types";
+import { AppState, AttendanceStatus, PlannerItem, SectionSelection, ClassOverride } from "../types";
 import { recordKey } from "../utils/attendance";
 
 const STORAGE_KEY = "attend_native_state_v1";
@@ -11,6 +11,7 @@ const initialState: AppState = {
   planner: [],
   threshold: 75,
   subjectThresholds: {},
+  overrides: {},
 };
 
 type Action =
@@ -22,6 +23,8 @@ type Action =
   | { type: "ADD_PLANNER"; item: PlannerItem }
   | { type: "TOGGLE_PLANNER_DONE"; id: string }
   | { type: "DELETE_PLANNER"; id: string }
+  | { type: "SET_OVERRIDE"; classId: string; override: ClassOverride }
+  | { type: "CLEAR_OVERRIDE"; classId: string }
   | { type: "WIPE" };
 
 function reducer(state: AppState, action: Action): AppState {
@@ -57,6 +60,15 @@ function reducer(state: AppState, action: Action): AppState {
       };
     case "DELETE_PLANNER":
       return { ...state, planner: state.planner.filter((p) => p.id !== action.id) };
+    case "SET_OVERRIDE": {
+      const overrides = { ...state.overrides, [action.classId]: action.override };
+      return { ...state, overrides };
+    }
+    case "CLEAR_OVERRIDE": {
+      const overrides = { ...state.overrides };
+      delete overrides[action.classId];
+      return { ...state, overrides };
+    }
     case "WIPE":
       return initialState;
     default:
