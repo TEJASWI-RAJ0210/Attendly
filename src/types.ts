@@ -9,6 +9,7 @@ export type RawSlot = {
 
 export type RawSection = {
   group: string;
+  code: string; // bare section code for display, e.g. "CS15" (the map key is "group|code" to stay unique across semesters)
   days: Record<string, RawSlot[]>;
 };
 
@@ -20,9 +21,9 @@ export type GroupsManifest = {
 };
 
 export type SectionSelection = {
-  core?: string; // section code e.g. "CS15"
-  pe1?: string; // section code e.g. "HPC11"
-  pe2?: string; // section code e.g. "CD8"
+  core?: string; // composite key "group|code" e.g. "CS-S5|CS15"
+  pe1?: string; // e.g. "HPC-S5-PE1|HPC11"
+  pe2?: string; // e.g. "CD-S5-PE2|CD8"
 };
 
 // A concrete scheduled class occurrence, combined from up to 3 sections

@@ -11,19 +11,30 @@ export function sectionsInGroup(group: string): string[] {
   return GROUPS.groups[group]?.sections ?? [];
 }
 
-export function groupOfSection(code: string): string | undefined {
-  return SECTIONS[code]?.group;
+/** Build the composite lookup key used as a SECTIONS key and as a stored selection value */
+export function sectionKey(group: string, code: string): string {
+  return `${group}|${code}`;
 }
 
-/** All original (un-overridden) classes for one section on one day, sorted by start time */
-function classesForSectionDay(code: string, day: DayName): ScheduledClass[] {
-  const sec = SECTIONS[code];
+export function groupOfSection(key: string): string | undefined {
+  return SECTIONS[key]?.group;
+}
+
+export function codeOfSection(key: string): string | undefined {
+  return SECTIONS[key]?.code;
+}
+
+/** All original (un-overridden) classes for one section on one day, sorted by start time.
+ *  `key` is the composite "group|code" key, not the bare display code — section codes are
+ *  not globally unique (the same code can appear in different semesters/groups). */
+function classesForSectionDay(key: string, day: DayName): ScheduledClass[] {
+  const sec = SECTIONS[key];
   if (!sec) return [];
   const slots = sec.days[day] ?? [];
   return slots
     .map((s) => ({
-      id: `${code}|${day}|${s.start}`,
-      sectionCode: code,
+      id: `${key}|${day}|${s.start}`,
+      sectionCode: sec.code,
       subject: s.subject,
       room: s.room,
       start: s.start,
