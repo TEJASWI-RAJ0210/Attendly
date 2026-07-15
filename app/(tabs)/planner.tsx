@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { Header } from "../../src/components/Header";
 import { useApp } from "../../src/context/AppContext";
 import { colors, radius, spacing } from "../../src/theme";
