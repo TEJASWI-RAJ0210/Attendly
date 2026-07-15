@@ -37,8 +37,8 @@ export default function TodayScreen() {
 
   const classes = useMemo(() => {
     if (!dayName) return [];
-    return combinedDaySchedule(state.selection, dayName);
-  }, [state.selection, dayName]);
+    return combinedDaySchedule(state.selection, dayName, state.overrides);
+  }, [state.selection, state.overrides, dayName]);
 
   const stripDates = useMemo(() => {
     const arr = [];
