@@ -13,7 +13,7 @@ export default function AttendanceScreen() {
   const { state, loaded } = useApp();
   const router = useRouter();
   const hasSelection = !!state.selection.core || !!state.selection.pe1 || !!state.selection.pe2;
-  const subjects = useMemo(() => allSelectedSubjects(state.selection), [state.selection]);
+  const subjects = useMemo(() => allSelectedSubjects(state.selection, state.overrides), [state.selection, state.overrides]);
   const overall = useMemo(() => overallStats(subjects, state.records), [subjects, state.records]);
 
   if (!loaded) return null;
